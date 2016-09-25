@@ -1,0 +1,24 @@
+<monitor>
+    <name>KubernetesMonitor</name>
+       <type>managed</type>
+        <description>Monitors Kubernetes resources.</description>
+        <monitor-configuration>     </monitor-configuration>
+        <monitor-run-task>
+           <!--  Edit execution-style as needed. -->
+           <execution-style>periodic</execution-style>
+           <execution-frequency-in-seconds>20</execution-frequency-in-seconds>
+           <name>Run</name>
+           <type>executable</type>
+           <task-arguments></task-arguments>
+            <executable-task>
+                <type>file</type>
+                <!--  Use only one file element per os-type. -->
+                 <file os-type="linux">kubmon.pl</file>
+                 <file os-type="mac">kubmon.pl</file>
+                 <file os-type="windows">kubmon.pl</file>
+                 <file os-type="solaris">kubmon.pl</file>
+                 <file os-type="sunos">kubmon.pl</file>
+                 <file os-type="aix">kubmon.pl</file>
+           </executable-task>
+         </monitor-run-task>
+</monitor>
