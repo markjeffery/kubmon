@@ -66,15 +66,15 @@ def send_events(parsed)
 
     pp(outarr)
 
-    url = "http://localhost:9080/events/publish/KubernetesEvents"
+    url = "http://se-demo-uk.demo.appdynamics.com:9080/events/publish/KubernetesEvents"
     uri = URI.parse(url)
 
     http = Net::HTTP.new(uri.host, uri.port)
     request = Net::HTTP::Post.new(uri.path,
         initheader = {
             "Content-type" => "application/vnd.appd.events+json;v=1",
-            "X-Events-API-AccountName" => "customer1_dafe513b-048d-4366-bba3-c186743bf418",
-            "X-Events-API-Key" => "3ae6226d-899d-4d88-a60c-04a19355d721"
+            "X-Events-API-AccountName" => "customer1_4c7e45a9-f1a6-4fdb-9bf9-5d3bd39aa6c6",
+            "X-Events-API-Key" => "957bd628-6fc3-4601-9451-ef894311472b"
         })
     request.body = outarr.to_json
 
